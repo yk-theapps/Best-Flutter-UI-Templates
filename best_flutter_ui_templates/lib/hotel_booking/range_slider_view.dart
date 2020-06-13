@@ -112,18 +112,19 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
   );
 
   @override
-  void paint(
-    PaintingContext context,
-    Offset center, {
-    @required Animation<double> activationAnimation,
-    @required Animation<double> enableAnimation,
-    bool isDiscrete = false,
-    bool isEnabled = false,
+  void paint(PaintingContext context, Offset center,
+     {
+    Animation<double> activationAnimation,
+    Animation<double> enableAnimation,
+    bool isDiscrete,
+    bool isEnabled,
     bool isOnTop,
-    @required SliderThemeData sliderTheme,
     TextDirection textDirection,
+    SliderThemeData sliderTheme,
     Thumb thumb,
-  }) {
+    bool isPressed,
+  })
+  {
     final Canvas canvas = context.canvas;
     final ColorTween colorTween = ColorTween(
       begin: sliderTheme.disabledThumbColor,
@@ -173,6 +174,7 @@ class CustomRangeThumbShape extends RangeSliderThumbShape {
     canvas.drawCircle(Offset(center.dx, center.dy), 10, cPaint);
     canvas.drawPath(thumbPath, Paint()..color = Colors.white);
   }
+  
 
   double convertRadiusToSigma(double radius) {
     return radius * 0.57735 + 0.5;

@@ -74,12 +74,12 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
             children: <Widget>[
               getButtonUI(CategoryType.ui, categoryType == CategoryType.ui),
               const SizedBox(
-                width: 16,
+                width: 14,
               ),
               getButtonUI(
                   CategoryType.coding, categoryType == CategoryType.coding),
               const SizedBox(
-                width: 16,
+                width: 14,
               ),
               getButtonUI(
                   CategoryType.basic, categoryType == CategoryType.basic),
